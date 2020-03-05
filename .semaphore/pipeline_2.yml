@@ -8,8 +8,8 @@ blocks:
           commands:
             - 'echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin'
             - 'docker pull $DOCKER_USERNAME/doc:latest || true'
-            - 'docker build --cache-from=$DOCKER_USERNAME/doc:latest -t $DOCKER_USERNAME/doc1 .'
-            - 'docker push $DOCKER_USERNAME/doc1:latest'
+            - 'docker build --cache-from=anumathew/doc:latest -t anumathew/doc1 .'
+            - docker push $DOCKER_USERNAME/doc1
       secrets:
         - name: dockerhub
       prologue:
